@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Học AI cùng Mentor — 20+ Khoá AI Thực Chiến FUNiX</title>
+<!-- Google Fonts: Be Vietnam Pro -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS Play CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatum -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-container": "#fbf9ff",
+            "surface-dim": "#d3d9f3",
+            "on-primary-fixed-variant": "#0040a2",
+            "on-secondary-container": "#fefcff",
+            "secondary-fixed-dim": "#b4c5ff",
+            "on-error-container": "#93000a",
+            "tertiary": "#006375",
+            "outline-variant": "#c2c6d8",
+            "primary-fixed-dim": "#b2c5ff",
+            "tertiary-fixed": "#acedff",
+            "secondary-fixed": "#dbe1ff",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "on-surface": "#141b2d",
+            "secondary-container": "#316bf3",
+            "primary": "#0052cc",
+            "surface-variant": "#dce2fb",
+            "on-primary-fixed": "#001848",
+            "surface-container": "#eaedff",
+            "on-surface-variant": "#424655",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed-variant": "#004e5c",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#0051d5",
+            "surface-container-highest": "#dce2fb",
+            "primary-fixed": "#dae2ff",
+            "on-secondary-fixed-variant": "#003ea8",
+            "inverse-surface": "#293043",
+            "tertiary-fixed-dim": "#4cd7f6",
+            "inverse-primary": "#b2c5ff",
+            "surface-container-low": "#f2f3ff",
+            "on-secondary-fixed": "#00174b",
+            "surface": "#faf8ff",
+            "surface-tint": "#0055d4",
+            "inverse-on-surface": "#eef0ff",
+            "primary-container": "#0068ff",
+            "outline": "#727687",
+            "background": "#faf8ff",
+            "on-tertiary": "#ffffff",
+            "on-background": "#141b2d",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "tertiary-container": "#007e94",
+            "on-tertiary-container": "#f1fbff",
+            "on-tertiary-fixed": "#001f26",
+            "surface-bright": "#faf8ff",
+            "surface-container-high": "#e2e7ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.375rem",
+            "space-md": "1.25rem",
+            "margin": "2rem",
+            "space-lg": "2rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.75rem",
+            "margin-mobile": "1.25rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3.5rem"
+          },
+          "fontFamily": {
+            "label-caps": ["Be Vietnam Pro"],
+            "headline-md": ["Be Vietnam Pro"],
+            "body-lg": ["Be Vietnam Pro"],
+            "body-sm": ["Be Vietnam Pro"],
+            "headline-xl": ["Be Vietnam Pro"],
+            "headline-sm": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "headline-lg": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "headline-xl-mobile": ["Be Vietnam Pro"],
+            "headline-lg-mobile": ["Be Vietnam Pro"],
+            "display-hero-mobile": ["Be Vietnam Pro"],
+            "display-hero": ["Be Vietnam Pro"],
+            "label-lg": ["Be Vietnam Pro"]
+          },
+          "fontSize": {
+            "label-caps": ["12px", { "lineHeight": "16px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-xl": ["40px", { "lineHeight": "52px", "fontWeight": "800" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "42px", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "46px", "fontWeight": "800" }],
+            "display-hero": ["56px", { "lineHeight": "68px", "fontWeight": "800" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Subtle neon aura keyframe */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+    .animate-pulse-glow {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c2c6d8;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md selection:bg-primary selection:text-on-primary">
+<!-- 1. STICKY TOP APP BAR (from Shared Components JSON with active link logic) -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/90 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-6 md:px-12 max-w-7xl mx-auto h-20">
+<!-- Brand Logo / Product Name -->
+<a class="flex items-center gap-3 group" href="#">
+<img alt="Logo Học AI cùng Mentor" class="w-10 h-10 rounded-lg shadow-sm group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida/AEtjO1UjmfYRF_tlP7Y8WWSjsUKz0jyoOWeqNu2DuiXTHgNdoQtK-PcM36M1vwLk0OUDBLbusQQIy9KQTvsj-pic2SmeD2vILlj3SAiXk42FmdGLAWX_jlBhv6vuA2hD7ItdmX8NHEFi_WgHjxr_yNKcblI3x18kLtBaCERgx9jRuBXoHRxJkBNb8VGLT7otsImozYewU6h8tW7q6onv6NaOhSabmYdTdfTzw6HMygg2fN7gV9iEz1B1voZmUR8"/>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-extrabold text-on-surface tracking-tight leading-none">Học AI cùng Mentor</span>
+<span class="text-label-caps font-label-caps text-primary uppercase tracking-wider mt-1">Khoá thực chiến FUNiX</span>
+</div>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md transition-colors" href="#lo-trinh">Lộ trình</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#khoa-hoc">Khóa học</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#vi-sao-chon">Đội ngũ Mentor</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#mentor-tuan">Học viên</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#faq">FAQ</a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-2 bg-primary-container hover:bg-secondary text-on-primary-container px-5 py-2.5 rounded-full font-label-lg text-label-lg font-bold shadow-md shadow-primary/20 active:scale-95 transition-all duration-150" href="https://zalo.me" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Tư vấn Zalo ngay</span>
+</a>
+</div>
+</div>
+</header>
+<main>
+<!-- 2. HERO SECTION (Deep Navy Gradient #0B1224 -> #12224E, glowing cyan gradient effects) -->
+<section class="relative overflow-hidden bg-gradient-to-b from-[#0B1224] via-[#0D1836] to-[#12224E] text-on-primary pt-12 pb-20 md:pt-16 md:pb-28">
+<!-- Ambient Glow Behind Elements -->
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-tertiary-fixed-dim/15 rounded-full blur-[100px] pointer-events-none animate-pulse-glow"></div>
+<div class="absolute -bottom-10 right-1/4 w-[450px] h-[450px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- LEFT COLUMN: Value Proposition & High-Impact CTA -->
+<div class="lg:col-span-7 flex flex-col items-start space-y-6">
+<!-- Pill Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-tertiary-fixed text-label-md font-label-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-ping"></span>
+<span>Chương trình chính quy FUNiX · Học online 60'/buổi</span>
+</div>
+<!-- Massive H1 Heading -->
+<h1 class="text-headline-xl-mobile md:text-display-hero font-display-hero tracking-tight leading-[1.15] text-white">
+              Biến AI thành 
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-tertiary-fixed-dim via-[#38BDF8] to-primary-fixed">vũ khí của riêng bạn</span> 
+              — chỉ sau vài buổi học
+            </h1>
+<!-- Subheadline -->
+<p class="text-body-lg font-body-lg text-surface-variant/90 max-w-2xl leading-relaxed">
+              Dành riêng cho sinh viên, dân văn phòng, sales, marketing, giáo viên và lập trình viên muốn làm chủ ChatGPT, Midjourney, Automation và GenAI.
+            </p>
+<!-- Stats Row (3 Pillars) -->
+<div class="grid grid-cols-3 gap-3 md:gap-6 py-3 w-full border-y border-white/10">
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md text-white font-extrabold">20+</span>
+<span class="text-label-md font-label-md text-surface-dim">Khoá AI thực chiến</span>
+</div>
+<div class="flex flex-col border-x border-white/10 px-3 md:px-6">
+<span class="text-headline-md font-headline-md text-white font-extrabold">7 nhóm</span>
+<span class="text-label-md font-label-md text-surface-dim">Nghề ứng dụng ngay</span>
+</div>
+<div class="flex flex-col pl-2">
+<span class="text-headline-md font-headline-md text-white font-extrabold">60'</span>
+<span class="text-label-md font-label-md text-surface-dim">Học tối nay dùng mai</span>
+</div>
+</div>
+<!-- CTA Button Group -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 w-full sm:w-auto">
+<a class="inline-flex justify-center items-center gap-2.5 bg-primary-container hover:bg-[#0055D6] text-white font-label-lg text-label-lg font-bold px-8 py-4 rounded-full shadow-lg shadow-primary-container/40 hover:shadow-primary-container/60 hover:-translate-y-0.5 active:scale-95 transition-all duration-200" href="https://zalo.me" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Nhắn Zalo — tư vấn miễn phí</span>
+</a>
+<a class="inline-flex justify-center items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-label-lg text-label-lg px-6 py-4 rounded-full backdrop-blur-sm transition-all duration-200" href="#khoa-hoc">
+<span>Xem danh sách khoá</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+</div>
+<!-- Consultation Guarantee Note -->
+<p class="text-label-caps font-label-caps text-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">verified_user</span>
+              Tư vấn định hướng 1 kèm 1 miễn phí · Không mất phí đăng ký giữ chỗ
+            </p>
+</div>
+<!-- RIGHT COLUMN: Embedded Concept Illustration -->
+<div class="lg:col-span-5 relative flex justify-center items-center">
+<div class="relative w-full max-w-lg rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-white/5 backdrop-blur-sm p-2 group">
+<!-- Glass Glow Inset -->
+<div class="rounded-xl overflow-hidden relative">
+<img class="w-full h-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-[1.02]" data-alt="A vibrant flat vector illustration of an Asian woman and man in a modern co-working tech space collaborating with glowing AI holographic interfaces. Laptops with dashboard analytics and code, chat bubbles labeled AI Assist and Code Help, ambient cyan and royal blue lighting on a deep navy background, conveying warmth and technological empowerment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwFqIkh7ZwVIwXwmgIWuMZd-sjHzVmuRWZkx-PQugfV50k0_X22bDXspib275VaTMY3c6L9E3tvray2q-r0Wf91Cz9v6LbwdHScRDzlT5GXP18AICDc0t70ymsje36rE_EUPHR6w7DRIE3eVCCkAqWSpoW4pzcUYnrl2VTljJDEf7-PA7w0Pi6ouJwAVZCg9I3bLWwUjr763KWN_wgY5d_zSo0BGsfcW3z2Hho_TwGMzIm5KKBUbty_S3D2YZX8ZSAB8nZDmdMans"/>
+</div>
+<!-- Floating Glowing Badge Pill -->
+<div class="absolute -bottom-3 right-6 bg-[#0B1224]/90 backdrop-blur-md border border-tertiary-fixed/30 text-white px-4 py-2 rounded-full shadow-xl flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-label-md font-label-md font-bold text-tertiary-fixed">Mentor đồng hành 1:1</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. TRUST BAR STRIP -->
+<section class="bg-surface-container-lowest border-y border-outline-variant/30 py-6">
+<div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">school</span>
+<span class="text-label-lg font-label-lg font-bold text-on-surface">Đồng hành cùng học viên FUNiX trên toàn quốc:</span>
+</div>
+<!-- Sleek Partner Badges -->
+<div class="flex flex-wrap items-center justify-center gap-6 md:gap-8 opacity-75">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface-variant tracking-wider">FUNiX FPT</span>
+<span class="text-outline-variant">|</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface-variant tracking-wider">VNU-HCM</span>
+<span class="text-outline-variant">|</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface-variant tracking-wider">FPT Software</span>
+<span class="text-outline-variant">|</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface-variant tracking-wider">VNPT AI Labs</span>
+<span class="text-outline-variant">|</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface-variant tracking-wider">TopCV Partner</span>
+</div>
+<!-- Highlight Counter Pill -->
+<div class="bg-surface-container text-primary font-bold px-4 py-1.5 rounded-full text-label-md font-label-md border border-primary/20 shrink-0">
+          ⭐ 3.000+ học viên đã tham gia
+        </div>
+</div>
+</section>
+<!-- 4. COURSE CATALOG SECTION ('Chọn khoá theo nghề của bạn') -->
+<section class="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-12" id="khoa-hoc">
+<!-- Section Header -->
+<div class="text-center max-w-3xl mx-auto mb-10">
+<span class="text-primary font-bold text-label-caps font-label-caps uppercase tracking-wider bg-surface-container px-3 py-1 rounded-full border border-primary/20">Khoá học thiết kế riêng</span>
+<h2 class="text-headline-xl-mobile md:text-headline-xl font-headline-xl text-on-surface mt-3">Chọn khoá theo nghề của bạn</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-3">
+          Nhắn Zalo để nhận lộ trình học gợi ý + lịch khai giảng + học phí ưu đãi phù hợp nhất với tình huống thực tế của bạn.
+        </p>
+</div>
+<!-- Horizontally Scrollable Filter Chips -->
+<div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 custom-scrollbar">
+<button class="bg-[#0B1224] text-white px-5 py-2 rounded-full font-label-md text-label-md font-bold whitespace-nowrap shadow-sm">
+          Tất cả khoá
+        </button>
+<button class="bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:border-primary/40 border border-outline-variant/40 px-5 py-2 rounded-full font-label-md text-label-md font-semibold whitespace-nowrap transition-colors">
+          🎓 Sinh viên
+        </button>
+<button class="bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:border-primary/40 border border-outline-variant/40 px-5 py-2 rounded-full font-label-md text-label-md font-semibold whitespace-nowrap transition-colors">
+          💼 Nhân viên VP
+        </button>
+<button class="bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:border-primary/40 border border-outline-variant/40 px-5 py-2 rounded-full font-label-md text-label-md font-semibold whitespace-nowrap transition-colors">
+          📈 Sales
+        </button>
+<button class="bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:border-primary/40 border border-outline-variant/40 px-5 py-2 rounded-full font-label-md text-label-md font-semibold whitespace-nowrap transition-colors">
+          📣 Marketing
+        </button>
+<button class="bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:border-primary/40 border border-outline-variant/40 px-5 py-2 rounded-full font-label-md text-label-md font-semibold whitespace-nowrap transition-colors">
+          🏫 Giáo viên
+        </button>
+<button class="bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:border-primary/40 border border-outline-variant/40 px-5 py-2 rounded-full font-label-md text-label-md font-semibold whitespace-nowrap transition-colors">
+          💻 IT
+        </button>
+<button class="bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:border-primary/40 border border-outline-variant/40 px-5 py-2 rounded-full font-label-md text-label-md font-semibold whitespace-nowrap transition-colors">
+          🙋 Ai cũng học được
+        </button>
+</div>
+<!-- 3-Column Grid of 6 Course Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 (Sinh viên - Green tag) -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-2 mb-4">
+<span class="px-3 py-1 rounded-full text-label-caps font-label-caps font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                🎓 Sinh viên
+              </span>
+<span class="text-label-caps font-label-caps text-outline font-mono">Mã: SAR101</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold mb-2 leading-snug">
+              GenAI Tối Ưu Nghiên Cứu &amp; Viết Luận Khoa Học
+            </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6 leading-relaxed">
+              Ứng dụng Claude &amp; ChatGPT để tổng hợp tài liệu, trích dẫn chuẩn APA, làm slide bảo vệ đồ án chỉ trong 30 phút.
+            </p>
+</div>
+<div>
+<div class="flex items-center gap-4 text-label-md font-label-md text-on-surface-variant mb-5 pt-3 border-t border-outline-variant/20">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">schedule</span> 4 buổi × 60'</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">videocam</span> Google Meet</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="flex-1 text-center bg-primary-container hover:bg-[#0055D6] text-white py-2.5 px-4 rounded-xl text-label-md font-label-md font-bold transition-all shadow-sm" href="https://zalo.me" rel="noopener" target="_blank">
+                💬 Hỏi về khoá này
+              </a>
+<a class="px-3 py-2.5 rounded-xl border border-outline-variant/60 text-on-surface hover:text-primary text-label-md font-label-md font-medium transition-colors" href="#mentor-tuan">
+                Chi tiết →
+              </a>
+</div>
+</div>
+</div>
+<!-- Card 2 (Nhân viên VP - Indigo tag) -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-2 mb-4">
+<span class="px-3 py-1 rounded-full text-label-caps font-label-caps font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
+                💼 Nhân viên VP
+              </span>
+<span class="text-label-caps font-label-caps text-outline font-mono">Mã: OFC204</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold mb-2 leading-snug">
+              Tự Động Hoá Báo Cáo Excel &amp; Email Với AI
+            </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6 leading-relaxed">
+              Xử lý dữ liệu bảng tính phức tạp, tạo dashboard tự động, viết email chuyên nghiệp với Copilot &amp; Claude.
+            </p>
+</div>
+<div>
+<div class="flex items-center gap-4 text-label-md font-label-md text-on-surface-variant mb-5 pt-3 border-t border-outline-variant/20">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">schedule</span> 4 buổi × 60'</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">videocam</span> Google Meet</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="flex-1 text-center bg-primary-container hover:bg-[#0055D6] text-white py-2.5 px-4 rounded-xl text-label-md font-label-md font-bold transition-all shadow-sm" href="https://zalo.me" rel="noopener" target="_blank">
+                💬 Hỏi về khoá này
+              </a>
+<a class="px-3 py-2.5 rounded-xl border border-outline-variant/60 text-on-surface hover:text-primary text-label-md font-label-md font-medium transition-colors" href="#mentor-tuan">
+                Chi tiết →
+              </a>
+</div>
+</div>
+</div>
+<!-- Card 3 (Sales - Orange tag) -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-2 mb-4">
+<span class="px-3 py-1 rounded-full text-label-caps font-label-caps font-bold bg-orange-50 text-orange-700 border border-orange-200">
+                📈 Sales &amp; Tư Vấn
+              </span>
+<span class="text-label-caps font-label-caps text-outline font-mono">Mã: SLS115</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold mb-2 leading-snug">
+              Kịch Bản Bán Hàng &amp; Chăm Sóc Khách Bằng AI
+            </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6 leading-relaxed">
+              Tạo chatbot kịch bản chốt đơn Zalo, xử lý từ chối thông minh, tăng tỷ lệ chuyển đổi khách hàng tiềm năng.
+            </p>
+</div>
+<div>
+<div class="flex items-center gap-4 text-label-md font-label-md text-on-surface-variant mb-5 pt-3 border-t border-outline-variant/20">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">schedule</span> 4 buổi × 60'</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">videocam</span> Google Meet</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="flex-1 text-center bg-primary-container hover:bg-[#0055D6] text-white py-2.5 px-4 rounded-xl text-label-md font-label-md font-bold transition-all shadow-sm" href="https://zalo.me" rel="noopener" target="_blank">
+                💬 Hỏi về khoá này
+              </a>
+<a class="px-3 py-2.5 rounded-xl border border-outline-variant/60 text-on-surface hover:text-primary text-label-md font-label-md font-medium transition-colors" href="#mentor-tuan">
+                Chi tiết →
+              </a>
+</div>
+</div>
+</div>
+<!-- Card 4 (Marketing - Pink tag) -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-2 mb-4">
+<span class="px-3 py-1 rounded-full text-label-caps font-label-caps font-bold bg-pink-50 text-pink-700 border border-pink-200">
+                📣 Marketing &amp; Content
+              </span>
+<span class="text-label-caps font-label-caps text-outline font-mono">Mã: MKT302</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold mb-2 leading-snug">
+              Sáng Tạo Nội Dung &amp; Hình Ảnh Đa Kênh Triệt Để
+            </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6 leading-relaxed">
+              Làm chủ Midjourney &amp; ChatGPT để sản xuất 50 bài viết social, thiết kế banner và video ngắn mỗi tuần.
+            </p>
+</div>
+<div>
+<div class="flex items-center gap-4 text-label-md font-label-md text-on-surface-variant mb-5 pt-3 border-t border-outline-variant/20">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">schedule</span> 4 buổi × 60'</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">videocam</span> Google Meet</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="flex-1 text-center bg-primary-container hover:bg-[#0055D6] text-white py-2.5 px-4 rounded-xl text-label-md font-label-md font-bold transition-all shadow-sm" href="https://zalo.me" rel="noopener" target="_blank">
+                💬 Hỏi về khoá này
+              </a>
+<a class="px-3 py-2.5 rounded-xl border border-outline-variant/60 text-on-surface hover:text-primary text-label-md font-label-md font-medium transition-colors" href="#mentor-tuan">
+                Chi tiết →
+              </a>
+</div>
+</div>
+</div>
+<!-- Card 5 (Giáo viên - Amber tag) -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-2 mb-4">
+<span class="px-3 py-1 rounded-full text-label-caps font-label-caps font-bold bg-amber-50 text-amber-700 border border-amber-200">
+                🏫 Giáo viên &amp; Đào tạo
+              </span>
+<span class="text-label-caps font-label-caps text-outline font-mono">Mã: EDU108</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold mb-2 leading-snug">
+              Soạn Giáo Án Tương Tác &amp; Đề Thi Chuẩn Bộ
+            </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6 leading-relaxed">
+              Tạo trò chơi tương tác, rubric chấm điểm, slide bài giảng sinh động giúp tiết kiệm 70% thời gian soạn bài.
+            </p>
+</div>
+<div>
+<div class="flex items-center gap-4 text-label-md font-label-md text-on-surface-variant mb-5 pt-3 border-t border-outline-variant/20">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">schedule</span> 4 buổi × 60'</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">videocam</span> Google Meet</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="flex-1 text-center bg-primary-container hover:bg-[#0055D6] text-white py-2.5 px-4 rounded-xl text-label-md font-label-md font-bold transition-all shadow-sm" href="https://zalo.me" rel="noopener" target="_blank">
+                💬 Hỏi về khoá này
+              </a>
+<a class="px-3 py-2.5 rounded-xl border border-outline-variant/60 text-on-surface hover:text-primary text-label-md font-label-md font-medium transition-colors" href="#mentor-tuan">
+                Chi tiết →
+              </a>
+</div>
+</div>
+</div>
+<!-- Card 6 (IT / Lập trình - Violet tag) -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-2 mb-4">
+<span class="px-3 py-1 rounded-full text-label-caps font-label-caps font-bold bg-purple-50 text-purple-700 border border-purple-200">
+                💻 IT &amp; Lập trình viên
+              </span>
+<span class="text-label-caps font-label-caps text-outline font-mono">Mã: DEV405</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold mb-2 leading-snug">
+              Lập Trình Viên X10 Hiệu Suất Với Pair-Programming
+            </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6 leading-relaxed">
+              Làm chủ GitHub Copilot, Cursor AI và ChatGPT để refactor code, viết test suite và debug thần tốc.
+            </p>
+</div>
+<div>
+<div class="flex items-center gap-4 text-label-md font-label-md text-on-surface-variant mb-5 pt-3 border-t border-outline-variant/20">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">schedule</span> 4 buổi × 60'</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">videocam</span> Google Meet</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="flex-1 text-center bg-primary-container hover:bg-[#0055D6] text-white py-2.5 px-4 rounded-xl text-label-md font-label-md font-bold transition-all shadow-sm" href="https://zalo.me" rel="noopener" target="_blank">
+                💬 Hỏi về khoá này
+              </a>
+<a class="px-3 py-2.5 rounded-xl border border-outline-variant/60 text-on-surface hover:text-primary text-label-md font-label-md font-medium transition-colors" href="#mentor-tuan">
+                Chi tiết →
+              </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Consultation Hook -->
+<div class="mt-12 p-6 rounded-2xl bg-surface-container border border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[28px]">support_agent</span>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Không thấy ngành nghề của bạn?</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">FUNiX thiết kế giáo trình riêng theo dữ liệu thực tế doanh nghiệp của bạn.</p>
+</div>
+</div>
+<a class="bg-primary-container hover:bg-secondary text-white px-6 py-3 rounded-full font-label-lg text-label-lg font-bold shadow-md shadow-primary/20 shrink-0" href="https://zalo.me" rel="noopener" target="_blank">
+          Nhắn Zalo yêu cầu giáo trình riêng
+        </a>
+</div>
+</section>
+<!-- 5. 'VÌ SAO HỌC Ở ĐÂY' SECTION (4 benefit cards on light background) -->
+<section class="py-16 md:py-20 bg-surface-container-low border-y border-outline-variant/30" id="vi-sao-chon">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<h2 class="text-headline-xl-mobile md:text-headline-xl font-headline-xl text-on-surface">Tại sao hơn 3.000+ học viên chọn Học AI cùng Mentor?</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-3">Mô hình đào tạo cá nhân hoá giúp bạn xoá bỏ nỗi lo rào cản kỹ thuật.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/40 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[28px]">track_changes</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 font-bold">Theo đúng nghề của bạn</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+              Giáo trình tuỳ biến chính xác theo tình huống thực tế của từng lĩnh vực ngành nghề, không dạy lý thuyết chung chung.
+            </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/40 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[28px]">bolt</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 font-bold">Thực chiến, không lý thuyết</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+              Mỗi buổi 60 phút là 100% bài thực hành trên dữ liệu và công việc của bạn. Học buổi tối, sáng mai ứng dụng được ngay.
+            </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/40 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/10 text-tertiary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[28px]">record_voice_over</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 font-bold">Mentor đồng hành 1:1</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+              Hỏi đáp trực tiếp, sửa prompt và cầm tay chỉ việc xuyên suốt khoá học. Mentor phản hồi Zalo nhanh trong 15 phút.
+            </p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/40 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[28px]">workspace_premium</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 font-bold">Chương trình chuẩn FUNiX</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+              Học liệu chuẩn chỉnh thuộc hệ sinh thái giáo dục công nghệ FPT FUNiX uy tín, có cấp chứng chỉ hoàn thành khoá học.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. TESTIMONIALS SECTION ('Học viên nói gì') -->
+<section class="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-primary font-bold text-label-caps font-label-caps uppercase tracking-wider bg-surface-container px-3 py-1 rounded-full border border-primary/20">Đánh giá thực tế</span>
+<h2 class="text-headline-xl-mobile md:text-headline-xl font-headline-xl text-on-surface mt-3">Học viên nói gì sau 4 buổi học?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/40 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex text-amber-400 mb-4">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface italic leading-relaxed mb-6">
+              "Trước đây mình mất 3 đêm làm slide tiểu luận, sau 4 buổi học cùng mentor đã biết cách dựng outline và tìm data chỉ trong 1 buổi tối."
+            </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">MA</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">Minh Anh</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Sinh viên UEH</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/40 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex text-amber-400 mb-4">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface italic leading-relaxed mb-6">
+              "Khoá tự động hoá bảng tính giúp mình cắt giảm 2 tiếng nhập liệu mỗi ngày. Mentor hướng dẫn rất kiên nhẫn và giải quyết đúng bài toán mình cần."
+            </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary/10 text-secondary flex items-center justify-center font-bold">TK</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">Tuấn Kiệt</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Chuyên viên Ngân hàng</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/40 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex text-amber-400 mb-4">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface italic leading-relaxed mb-6">
+              "Rất ngạc nhiên vì AI không hề khó như mình tưởng. Bây giờ việc soạn đề kiểm tra trắc nghiệm và thiết kế hoạt động nhóm diễn ra cực kỳ nhẹ nhàng."
+            </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center font-bold">TH</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">Thu Hà</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Giáo viên THPT</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. MENTOR SECTION (Navy premium container card, two columns) -->
+<section class="py-12 max-w-7xl mx-auto px-6 md:px-12" id="mentor-tuan">
+<div class="bg-gradient-to-br from-[#0B1224] to-[#162758] rounded-3xl p-8 md:p-12 text-white border border-white/10 shadow-2xl relative overflow-hidden">
+<!-- Background Neon Glow Disc -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-tertiary-fixed-dim/10 rounded-full blur-[90px] pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<!-- LEFT: Mentor Portrait & Credentials -->
+<div class="lg:col-span-5 flex flex-col items-center">
+<div class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-white/20 shadow-xl group">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Portrait of Mentor Tuấn, a professional Vietnamese AI educator in a navy blazer sitting at a modern desk with laptop, smiling warmly at the camera in a modern tech office setting. Soft studio lighting with a high-contrast corporate tech background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO3BfpT38OF4ocYU4lxvOuy11BaFViX2wQbbycOP6fielL8v8uy8VjtsJnKpCR8M0gU8Brfk6FnrbJ6RknWUUreZ8GLE-t8aO8slXYJh93hM4bBFXh9huy0akJZOqDFB150J9qAZ-vb96kNB7bl2iE79QLxBwhwuOysBnugUqs2KZva78R9Ccb3E2qM1ztknh-SARX12svZ2Mx1rGUks2iS-j-k1dW7wPBfQJHC4i8sRG3bjTIrYNrtShi-xpx_1C4IhJ8cEWfhQA"/>
+<div class="absolute top-3 left-3 bg-emerald-500 text-white text-label-caps font-label-caps px-3 py-1 rounded-full flex items-center gap-1.5 shadow-md">
+<span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+<span>Live Mentor Online</span>
+</div>
+</div>
+<!-- Credential Badges -->
+<div class="flex flex-wrap justify-center gap-2 mt-4 max-w-xs">
+<span class="bg-white/10 text-tertiary-fixed text-label-caps font-label-caps px-3 py-1.5 rounded-full border border-white/15">Mentor chính thức FUNiX</span>
+<span class="bg-white/10 text-surface-variant text-label-caps font-label-caps px-3 py-1.5 rounded-full border border-white/15">Chuyên GenAI &amp; Tự động hoá</span>
+<span class="bg-white/10 text-surface-variant text-label-caps font-label-caps px-3 py-1.5 rounded-full border border-white/15">100+ buổi kèm trực tiếp</span>
+</div>
+</div>
+<!-- RIGHT: Bio & Direct Consultation Action -->
+<div class="lg:col-span-7 flex flex-col items-start">
+<span class="text-tertiary-fixed font-bold text-label-caps font-label-caps uppercase tracking-wider bg-white/10 px-3 py-1 rounded-full border border-white/15 mb-3">Người đồng hành của bạn</span>
+<h2 class="text-headline-xl-mobile md:text-headline-lg font-headline-lg text-white mb-4">Học trực tiếp từ người ứng dụng AI mỗi ngày</h2>
+<p class="text-body-md font-body-md text-surface-dim leading-relaxed mb-6">
+              "Chào bạn, mình là Mentor Tuấn. Với hơn 8 năm làm việc trong lĩnh vực phần mềm và đào tạo công nghệ tại FUNiX, mình hiểu rõ rào cản lớn nhất khi tiếp cận AI không phải là công nghệ, mà là không biết bắt đầu từ bài toán nào của riêng mình. Mình cam kết đồng hành cùng bạn từ những câu lệnh prompt đầu tiên cho tới khi bạn tự tin làm chủ công việc."
+            </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+<a class="inline-flex justify-center items-center gap-2 bg-primary-container hover:bg-[#0055D6] text-white px-8 py-4 rounded-full font-label-lg text-label-lg font-bold shadow-lg shadow-primary-container/40 active:scale-95 transition-all" href="https://zalo.me" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Nhắn trực tiếp cho mentor</span>
+</a>
+<span class="text-label-md font-label-md text-surface-variant text-center sm:text-left">
+                ⏱ Phản hồi trong vòng 15 phút
+              </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. 'BẮT ĐẦU THẾ NÀO — CHỈ 3 BƯỚC' SECTION -->
+<section class="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-12" id="lo-trinh">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="text-primary font-bold text-label-caps font-label-caps uppercase tracking-wider bg-surface-container px-3 py-1 rounded-full border border-primary/20">Lộ trình đơn giản</span>
+<h2 class="text-headline-xl-mobile md:text-headline-xl font-headline-xl text-on-surface mt-3">Bắt đầu thế nào — chỉ 3 bước</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-3">Quy trình nhập học nhanh chóng, không thủ tục phức tạp.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<!-- Progression Card 01 -->
+<div class="relative bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-8 shadow-sm overflow-hidden flex flex-col justify-between">
+<span class="absolute -top-3 -right-1 text-[80px] font-black font-mono text-surface-container leading-none select-none pointer-events-none">01</span>
+<div class="relative z-10">
+<div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-headline-sm mb-4">
+<span class="material-symbols-outlined">send</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold mb-2">Nhắn Zalo cho mentor</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+              Mô tả ngành nghề và mục tiêu bạn muốn tối ưu (công việc văn phòng, học tập, bán hàng hay sáng tạo nội dung).
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 text-label-caps font-label-caps text-primary font-bold">
+            Bước khởi đầu · Miễn phí
+          </div>
+</div>
+<!-- Progression Card 02 -->
+<div class="relative bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-8 shadow-sm overflow-hidden flex flex-col justify-between">
+<span class="absolute -top-3 -right-1 text-[80px] font-black font-mono text-surface-container leading-none select-none pointer-events-none">02</span>
+<div class="relative z-10">
+<div class="w-12 h-12 rounded-xl bg-secondary text-white flex items-center justify-center font-bold text-headline-sm mb-4">
+<span class="material-symbols-outlined">alt_route</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold mb-2">Nhận lộ trình phù hợp</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+              Mentor phân tích và đề xuất đúng khoá học 4 buổi cần thiết nhất cùng lịch học linh hoạt theo thời gian rảnh của bạn.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 text-label-caps font-label-caps text-secondary font-bold">
+            Tuỳ biến theo năng lực
+          </div>
+</div>
+<!-- Progression Card 03 -->
+<div class="relative bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-8 shadow-sm overflow-hidden flex flex-col justify-between">
+<span class="absolute -top-3 -right-1 text-[80px] font-black font-mono text-surface-container leading-none select-none pointer-events-none">03</span>
+<div class="relative z-10">
+<div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-headline-sm mb-4">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold mb-2">Học &amp; dùng được ngay</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+              Lên lớp 60 phút/buổi qua Google Meet, thực hành ngay trên case study của chính bạn và nhận chứng nhận hoàn thành.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 text-label-caps font-label-caps text-emerald-600 font-bold">
+            Thực chiến ngay trên việc thật
+          </div>
+</div>
+</div>
+</section>
+<!-- 9. FINAL CTA BAND (Full-width deep navy gradient rounded-3xl container) -->
+<section class="py-10 max-w-7xl mx-auto px-6 md:px-12">
+<div class="bg-gradient-to-r from-[#0B1224] via-[#0E1A3C] to-[#12224E] rounded-3xl p-8 md:p-14 text-white border border-white/15 shadow-2xl relative overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+<!-- LEFT: Title, Copy & Giant Zalo CTA -->
+<div class="lg:col-span-7 flex flex-col items-start space-y-5">
+<span class="px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-tertiary-fixed text-label-caps font-label-caps">Tư vấn trực tiếp trong ngày</span>
+<h2 class="text-headline-xl-mobile md:text-headline-xl font-headline-xl text-white">
+              Không biết chọn khoá nào? 💬
+            </h2>
+<p class="text-body-lg font-body-lg text-surface-dim leading-relaxed">
+              Nhắn 1 dòng: <span class="text-white font-bold bg-white/10 px-2 py-0.5 rounded">"mình là [nghề], muốn [mục tiêu]"</span> — mentor tư vấn miễn phí trong ngày.
+            </p>
+<div class="pt-2 w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-primary-container hover:bg-[#0055D6] text-white px-8 py-5 rounded-full text-headline-sm font-headline-sm font-bold shadow-xl shadow-primary-container/40 hover:shadow-primary-container/60 hover:-translate-y-0.5 active:scale-95 transition-all duration-200" href="https://zalo.me" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+<span>Nhắn Zalo — Nhận tư vấn miễn phí ngay</span>
+</a>
+</div>
+<p class="text-label-md font-label-md text-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-emerald-400">check_circle</span>
+              Không mất phí tư vấn · Phản hồi trong vòng 15 phút
+            </p>
+</div>
+<!-- RIGHT: Sleek White QR Code Card -->
+<div class="lg:col-span-5 flex justify-center">
+<div class="bg-surface-container-lowest text-on-surface p-6 rounded-2xl shadow-xl border border-white/20 max-w-xs text-center flex flex-col items-center">
+<div class="w-48 h-48 rounded-xl overflow-hidden p-2 border border-outline-variant/40 bg-white mb-4">
+<img alt="QR Code Zalo Mentor Học AI" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF0-hrnqkR1DVaYnwzYCF4Vza2GLStFrl2xbktwFadZQlE3A8-gZBml18y_Pq55UWDnELFLFvbjYZOv0i-Lo7iB-q8I4tFgy130GEhp-WguN-NSWDhlr2F067xaYksVNNHHrig2f_qLfwgweaOLJdyhi4hqxCP6z5PVuTbkNQUCy2nnLj1NrGlQpTwZK2rYYYGdcFijoNwLUXVvPBIBF0oweAt0Ujsi8P_hF9DZjObvx6ZerkmHvtOXPLWyM2tiHqwnPJuOHVPCD4"/>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">Quét QR để nhắn Zalo ngay</p>
+<p class="text-body-sm font-body-sm text-primary font-bold mt-1">
+                🔥 Ưu đãi nhóm &amp; lịch khai giảng gần nhất — hỏi mentor hôm nay
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. FAQ ACCORDION SECTION ('Câu hỏi hay gặp') -->
+<section class="py-16 md:py-24 max-w-4xl mx-auto px-6 md:px-12" id="faq">
+<div class="text-center mb-12">
+<span class="text-primary font-bold text-label-caps font-label-caps uppercase tracking-wider bg-surface-container px-3 py-1 rounded-full border border-primary/20">Giải đáp thắc mắc</span>
+<h2 class="text-headline-xl-mobile md:text-headline-xl font-headline-xl text-on-surface mt-3">Giải đáp thắc mắc thường gặp</h2>
+</div>
+<div class="space-y-4" id="faq-container">
+<!-- Accordion Item 1 -->
+<details class="group bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 open:shadow-md transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="text-headline-sm font-headline-sm text-on-surface font-semibold pr-4">
+              Không biết gì về công nghệ, không biết code có học được không?
+            </span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-body-md font-body-md text-on-surface-variant leading-relaxed pt-3 border-t border-outline-variant/20">
+            Hoàn toàn học được! Các khoá học được thiết kế bằng ngôn ngữ tự nhiên (tiếng Việt), tập trung vào tư duy đặt câu hỏi (Prompting) và công cụ AI thân thiện, không đòi hỏi bất kỳ kiến thức lập trình hay nền tảng IT nào.
+          </p>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 open:shadow-md transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="text-headline-sm font-headline-sm text-on-surface font-semibold pr-4">
+              Thời gian học diễn ra lúc nào? Nếu bận có được học bù không?
+            </span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-body-md font-body-md text-on-surface-variant leading-relaxed pt-3 border-t border-outline-variant/20">
+            Lịch học cực kỳ linh hoạt vào các buổi tối hoặc cuối tuần (mỗi buổi 60 phút). Nếu có buổi bận đột xuất, bạn sẽ được mentor sắp xếp lịch học bù hoặc nhận video record kèm hướng dẫn chi tiết qua Zalo.
+          </p>
+</details>
+<!-- Accordion Item 3 -->
+<details class="group bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 open:shadow-md transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="text-headline-sm font-headline-sm text-on-surface font-semibold pr-4">
+              Học phí khoá học là bao nhiêu?
+            </span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-body-md font-body-md text-on-surface-variant leading-relaxed pt-3 border-t border-outline-variant/20">
+            Học phí được tối ưu cho học viên Việt Nam với nhiều gói hỗ trợ sinh viên và đăng ký nhóm. Vì mỗi học viên có lộ trình khác nhau, bạn hãy nhắn Zalo để mentor tư vấn gói học phí ưu đãi nhất đang áp dụng cho tình huống của bạn.
+          </p>
+</details>
+<!-- Accordion Item 4 -->
+<details class="group bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-6 open:shadow-md transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="text-headline-sm font-headline-sm text-on-surface font-semibold pr-4">
+              Sau khi hoàn thành có được cấp chứng chỉ không?
+            </span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-body-md font-body-md text-on-surface-variant leading-relaxed pt-3 border-t border-outline-variant/20">
+            Có. Học viên hoàn thành khoá học và bài thực hành tốt nghiệp sẽ nhận được chứng chỉ xác nhận kỹ năng từ chương trình FUNiX, có thể đính kèm vào hồ sơ LinkedIn, CV xin việc hoặc portfolio cá nhân.
+          </p>
+</details>
+</div>
+</section>
+</main>
+<!-- 11. FOOTER (from Shared Components JSON) -->
+<footer class="docked full-width bottom bg-inverse-surface border-t border-outline/20 text-inverse-on-surface">
+<div class="w-full px-6 md:px-12 py-12 md:py-16 max-w-7xl mx-auto flex flex-col gap-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<!-- Brand & Description -->
+<div class="md:col-span-6 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<img alt="Logo Học AI cùng Mentor" class="w-8 h-8 rounded-lg" src="https://lh3.googleusercontent.com/aida/AEtjO1UjmfYRF_tlP7Y8WWSjsUKz0jyoOWeqNu2DuiXTHgNdoQtK-PcM36M1vwLk0OUDBLbusQQIy9KQTvsj-pic2SmeD2vILlj3SAiXk42FmdGLAWX_jlBhv6vuA2hD7ItdmX8NHEFi_WgHjxr_yNKcblI3x18kLtBaCERgx9jRuBXoHRxJkBNb8VGLT7otsImozYewU6h8tW7q6onv6NaOhSabmYdTdfTzw6HMygg2fN7gV9iEz1B1voZmUR8"/>
+<span class="text-headline-md font-headline-md font-extrabold text-inverse-on-surface">Học AI cùng Mentor</span>
+</div>
+<p class="text-body-sm font-body-sm text-surface-dim max-w-md">
+            Nền tảng đào tạo kỹ năng ứng dụng AI thực chiến thuộc hệ sinh thái FUNiX FPT. Đồng hành cá nhân 1:1 cùng chuyên gia công nghệ.
+          </p>
+</div>
+<!-- Contact & Hours -->
+<div class="md:col-span-6 flex flex-col md:items-end gap-2 text-surface-dim text-body-sm font-body-sm">
+<p class="text-inverse-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">chat</span>
+            Zalo Tư vấn: 09xx xxx xxx
+          </p>
+<p>Giờ tư vấn: 8h00 – 22h00 mỗi ngày (Kể cả T7 &amp; CN)</p>
+<p class="text-label-caps font-label-caps text-outline-variant mt-1">Chương trình đào tạo kỹ năng AI thực hành chính thức FUNiX FPT.</p>
+</div>
+</div>
+<!-- Links & Legal -->
+<div class="pt-8 border-t border-outline/20 flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm font-body-sm">
+<p class="text-surface-dim">
+          © 2025 FUNiX FPT - Học AI cùng Mentor. Nền tảng đào tạo AI ứng dụng thực chiến hàng đầu Việt Nam.
+        </p>
+<div class="flex flex-wrap gap-6">
+<a class="text-surface-dim hover:text-inverse-on-surface transition-colors" href="#">Điều khoản dịch vụ</a>
+<a class="text-surface-dim hover:text-inverse-on-surface transition-colors" href="#">Chính sách bảo mật</a>
+<a class="text-surface-dim hover:text-inverse-on-surface transition-colors" href="#">Cam kết đầu ra</a>
+<a class="text-tertiary-fixed hover:text-tertiary-fixed-dim font-bold transition-colors" href="https://zalo.me" rel="noopener" target="_blank">Liên hệ Zalo Mentor</a>
+<a class="text-surface-dim hover:text-inverse-on-surface transition-colors" href="#">Hệ sinh thái FUNiX</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- MOBILE STICKY FLOATING CONSULTATION DOCK -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 p-3 bg-surface/95 backdrop-blur-md border-t border-outline-variant/30 z-40 shadow-2xl flex items-center justify-between gap-3">
+<div class="flex flex-col pl-2">
+<span class="text-label-md font-label-md font-bold text-on-surface">Cần tư vấn chọn khoá?</span>
+<span class="text-label-caps font-label-caps text-primary">Mentor online phản hồi ngay</span>
+</div>
+<a class="bg-primary-container hover:bg-secondary text-white font-label-md font-bold px-5 py-2.5 rounded-full shadow-md flex items-center gap-1.5 shrink-0" href="https://zalo.me" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Nhắn Zalo</span>
+</a>
+</div>
+</body></html>
